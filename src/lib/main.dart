@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'sound_question.dart';
+import 'pages/sound_quiz_page.dart';
+import 'pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Assistant Learn\'Up',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const SoundQuestionPage(),
+      theme: ThemeData.dark().copyWith(primaryColor: Colors.teal),
+      home: const HomePage(),
     );
   }
 }
