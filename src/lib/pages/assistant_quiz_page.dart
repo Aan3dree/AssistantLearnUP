@@ -12,6 +12,10 @@ class AssistantQuizPage extends StatefulWidget {
 }
 
 class _AssistantQuizPageState extends State<AssistantQuizPage> {
+  List<Icon> scoreKeeper = [];
+  int pageIndex = 0;
+  bool end = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +47,26 @@ class _AssistantQuizPageState extends State<AssistantQuizPage> {
               child: TextButton(
                 onPressed: () {
                   print('Choose 1');
+                  if (end) {
+                    Navigator.pop(context);
+                  } else {
+                    setState(() {
+                      if (pageIndex >= 7) {
+                        quizBrain.endGame();
+                        end = true;
+                      } else {
+                        if (quizBrain.isCorrectAnswer(1)) {
+                          scoreKeeper.add(Icon(FontAwesomeIcons.check));
+                        } else {
+                          scoreKeeper.add(Icon(FontAwesomeIcons.close));
+                        }
+                        quizBrain.nextQuestion();
+                        print(pageIndex);
+                        pageIndex++;
+                        print(pageIndex);
+                      }
+                    });
+                  }
                 },
                 child: Text(
                   quizBrain.getChoice(1),
@@ -52,41 +76,79 @@ class _AssistantQuizPageState extends State<AssistantQuizPage> {
               ),
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                onPressed: () {
-                  print('Choose 2');
-                },
-                child: Text(
-                  quizBrain.getChoice(2),
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+          end
+              ? Text('')
+              : Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(
+                      onPressed: () {
+                        print('Choose 2');
+                        setState(() {
+                          if (pageIndex >= 7) {
+                            quizBrain.endGame();
+                            end = true;
+                          } else {
+                            if (quizBrain.isCorrectAnswer(2)) {
+                              scoreKeeper.add(Icon(FontAwesomeIcons.check));
+                            } else {
+                              scoreKeeper.add(Icon(FontAwesomeIcons.close));
+                            }
+                            print(pageIndex);
+                            quizBrain.nextQuestion();
+                            pageIndex++;
+                            print(pageIndex);
+                          }
+                        });
+                      },
+                      child: Text(
+                        quizBrain.getChoice(2),
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                      style: TextButton.styleFrom(
+                          backgroundColor: Colors.lightGreen),
+                    ),
+                  ),
                 ),
-                style: TextButton.styleFrom(backgroundColor: Colors.lightGreen),
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                onPressed: () {
-                  print('Choose 3');
-                  setState(() {
-                    quizBrain.nextQuestion();
-                  });
-                },
-                child: Text(
-                  quizBrain.getChoice(3),
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+          end
+              ? Text('')
+              : Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(
+                      onPressed: () {
+                        print('Choose 3');
+                        setState(() {
+                          if (pageIndex >= 7) {
+                            quizBrain.endGame();
+                            end = true;
+                          } else {
+                            if (quizBrain.isCorrectAnswer(3)) {
+                              scoreKeeper.add(Icon(FontAwesomeIcons.check));
+                            } else {
+                              scoreKeeper.add(Icon(FontAwesomeIcons.close));
+                            }
+                            quizBrain.nextQuestion();
+                            print(pageIndex);
+                            pageIndex++;
+                            print(pageIndex);
+                          }
+                        });
+                      },
+                      child: Text(
+                        quizBrain.getChoice(3),
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                      style: TextButton.styleFrom(
+                          backgroundColor: Colors.blueGrey),
+                    ),
+                  ),
                 ),
-                style: TextButton.styleFrom(backgroundColor: Colors.blueGrey),
-              ),
-            ),
-          ),
+          Row(
+            children: scoreKeeper,
+          )
         ],
       ),
     );

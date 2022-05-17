@@ -41,7 +41,7 @@ class AssistantQuizBrain {
     AssistantQuiz(
         'Qual a principal aplicação das assistentes virtuais disponíveis no mercado?',
         ['Auxílio em atividades', 'Venda de produtos', 'Educação']),
-    AssistantQuiz('Fim do Quiz', ['Voltar para home']),
+    AssistantQuiz('Fim do Quiz', ['Voltar para home', '', '']),
   ];
 
   String getQuestion() {
@@ -77,20 +77,54 @@ class AssistantQuizBrain {
   }
 
   void nextQuestion() {
-    if (_questionNumber < _quizData.length) {
-      _questionNumber++;
+    print('Question number $_questionNumber');
+    _questionNumber++;
+    print('Question number $_questionNumber');
+    /*
+    try {
+      if (!isFinished()) {
+        if (_questionNumber < _quizData.length) {
+          int lenf = _quizData.length;
+          print('Question number $_questionNumber');
+          print('Quiz Lenght $lenf');
+          _questionNumber++;
+        }
+      } else {
+        endGame();
+      }
+    } catch (e) {
+      print('crashou no nextQuestion');
+      print(e);
     }
+    * */
   }
 
   bool isFinished() {
-    if (_questionNumber == _quizData.length) {
-      return true;
-    } else {
+    try {
+      if (_questionNumber == _quizData.length - 2) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      print('crashou no isFinished e vai retornar false');
+      print(e);
+    } finally {
       return false;
     }
   }
 
   void endGame() {
-    _questionNumber = 0;
+    _questionNumber = 9;
   }
+/*
+  void endGame() {
+    try {
+      _questionNumber = 9;
+    } catch (e) {
+      print('crashou no endGame');
+      print(e);
+    }
+  }
+  * */
 }
