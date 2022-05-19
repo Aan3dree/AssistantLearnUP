@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'sound_quiz_page.dart';
 import 'assistant_quiz_page.dart';
+import 'learn_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -82,30 +83,18 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     TextButton(
                       style: TextButton.styleFrom(
-                          backgroundColor: Color.fromARGB(255, 26, 121, 75)),
+                          backgroundColor: Colors.lightBlue),
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                    SoundQuestionPage()));
+                                    LearnAssistantPage()));
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          'Sound Quiz',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
-                        ),
-                      ),
-                    ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                          backgroundColor: Colors.blueGrey),
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Assistent Quiz',
+                          'Learn Page',
                           style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       ),
