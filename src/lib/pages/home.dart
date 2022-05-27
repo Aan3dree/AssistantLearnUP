@@ -4,6 +4,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'sound_quiz_page.dart';
 import 'assistant_quiz_page.dart';
 import 'learn_page.dart';
+import '../services/httpHelper.dart';
+
+HttpHelper httpHelper = HttpHelper();
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -95,6 +98,20 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'Learn Page',
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                          backgroundColor: Colors.lightBlue),
+                      onPressed: () {
+                        httpHelper.fetchData();
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Fetch',
                           style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       ),
