@@ -3,8 +3,9 @@ import 'dart:ffi';
 import 'package:audioplayers/audioplayers.dart';
 
 class SoundQuestion {
-  Future<AudioPlayer> sound;
+  String sound;
   List<String> choices;
+  int number;
 
-  SoundQuestion(this.sound, this.choices);
+  SoundQuestion(this.sound, this.choices, this.number);
 }
