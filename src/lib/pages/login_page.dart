@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,6 +10,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  late String email;
+  late String password;
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.black),
             onChanged: (value) {
-              //email = value;
+              email = value;
             },
             decoration: kInputDecoration.copyWith(hintText: 'Digite seu Email'),
           ),
@@ -42,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.black),
             onChanged: (value) {
-              //password = value;
+              password = value;
             },
             decoration: kInputDecoration.copyWith(hintText: 'Digite sua Senha'),
           ),
@@ -60,7 +64,17 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(color: Colors.black87, fontSize: 18),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () async {
+                try {
+                  final user = await auth.signInWithEmailAndPassword(
+                      email: email, password: password);
+                  if (user != null) {
+                    Navigator.pushNamed(context, '/home');
+                  }
+                } catch (e) {
+                  print(e);
+                }
+              },
             ),
           ),
           SizedBox(
