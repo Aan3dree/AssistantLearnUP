@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "532768284383",
+    "project_id": "assistantlearnup",
+    "storage_bucket": "assistantlearnup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532768284383:android:c6b4560880b21c23b4536a",
+        "android_client_info": {
+          "package_name": "com.andrev.assistant_learn_up"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532768284383-pael5or8g25bd3c8l2jrsgj6ef7iulsu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGcgUznHvRbauGSKUMftjtJdMqPcb-irQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "532768284383-pael5or8g25bd3c8l2jrsgj6ef7iulsu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
