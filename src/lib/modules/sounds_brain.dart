@@ -1,154 +1,178 @@
-import '../models/sounds.dart';
+import '../models/sound_question.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 AudioPlayer player = AudioPlayer();
 AudioCache cachePlayer = AudioCache(fixedPlayer: player);
 bool isPlaying = false;
 
+//cachePlayer.play('sounds/pandeiro.mp3'
 class SoundBrain {
   int _soundNumber = 0;
   final List<SoundQuestion> _soundData = [
-    SoundQuestion(cachePlayer.play('sounds/pandeiro.mp3'),
-        ['Alfaia', 'Atabaque', 'Pandeiro', 'Berimbau']),
-    SoundQuestion(cachePlayer.play('sounds/acordeon.mp3'),
-        ['Berimbau', 'Zabumba', 'Tricórdio', 'Acordeon']),
-    SoundQuestion(cachePlayer.play('sounds/harpa.mp3'),
-        ['Saxsoprano', 'Teclado', 'Harpa', 'Flauta']),
-    SoundQuestion(cachePlayer.play('sounds/alfaia.mp3'),
-        ['Alfaia', 'Pandeiro', 'Tricórdio', 'Teclado']),
-    SoundQuestion(cachePlayer.play('sounds/teclado.mp3'),
-        ['Teclado', 'Atabaque', 'Guitarra', 'Violino']),
-    SoundQuestion(cachePlayer.play('sounds/atabaque.mp3'),
-        ['Pandeiro', 'Zabumba', 'Atabaque', 'Alfaia']),
-    SoundQuestion(cachePlayer.play('sounds/violao.mp3'),
-        ['Berimbau', 'Atabaque', 'Alfaia', 'Pandeiro']),
-    SoundQuestion(cachePlayer.play('sounds/zabumba.mp3'),
-        ['Harpa', 'Zabumba', 'Pandeiro', 'Alfaia']),
-    SoundQuestion(cachePlayer.play('sounds/violino.mp3'),
-        ['Violão', 'Guitarra', 'Violino', 'Teclado']),
-    SoundQuestion(cachePlayer.play('sounds/berimbau.mp3'),
-        ['Berimbau', 'Zabumba', 'Pandeiro', 'Atabaque']),
+    SoundQuestion('sounds/pandeiro.mp3',
+        ['Alfaia', 'Atabaque', 'Pandeiro', 'Berimbau'], 1),
+    SoundQuestion('sounds/acordeon.mp3',
+        ['Berimbau', 'Zabumba', 'Tricórdio', 'Acordeon'], 2),
+    SoundQuestion(
+        'sounds/harpa.mp3', ['Saxsoprano', 'Teclado', 'Harpa', 'Flauta'], 3),
+    SoundQuestion(
+        'sounds/alfaia.mp3', ['Alfaia', 'Pandeiro', 'Tricórdio', 'Teclado'], 4),
+    SoundQuestion('sounds/teclado.mp3',
+        ['Teclado', 'Atabaque', 'Guitarra', 'Violino'], 5),
+    SoundQuestion('sounds/atabaque.mp3',
+        ['Pandeiro', 'Zabumba', 'Atabaque', 'Alfaia'], 6),
+    SoundQuestion(
+        'sounds/violao.mp3', ['Berimbau', 'Atabaque', 'Alfaia', 'Pandeiro'], 7),
+    SoundQuestion(
+        'sounds/zabumba.mp3', ['Harpa', 'Zabumba', 'Pandeiro', 'Alfaia'], 8),
+    SoundQuestion(
+        'sounds/violino.mp3', ['Violão', 'Guitarra', 'Violino', 'Teclado'], 9),
+    SoundQuestion('sounds/berimbau.mp3',
+        ['Berimbau', 'Zabumba', 'Pandeiro', 'Atabaque'], 10),
   ];
 
   bool getCorrectAnswer(int choice) {
+    bool isCorrect = false;
+
     try {
       switch (choice) {
         case 1:
           if (_soundNumber == 0) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 1) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 2) {
-            return false;
+            isCorrect = false;
+            return isCorrect;
           } else if (_soundNumber == 3) {
-            return true;
+            isCorrect = true;
           } else if (_soundNumber == 4) {
-            return true;
+            isCorrect = true;
           } else if (_soundNumber == 5) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 6) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 7) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 8) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 9) {
-            return true;
+            isCorrect = true;
           }
           break;
         case 2:
           if (_soundNumber == 0) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 1) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 2) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 3) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 4) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 5) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 6) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 7) {
-            return true;
+            isCorrect = false;
           } else if (_soundNumber == 8) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 9) {
-            return false;
+            isCorrect = false;
           }
           break;
         case 3:
           if (_soundNumber == 0) {
-            return true;
+            isCorrect = true;
           } else if (_soundNumber == 1) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 2) {
-            return true;
+            isCorrect = true;
           } else if (_soundNumber == 3) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 4) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 5) {
-            return true;
+            isCorrect = true;
           } else if (_soundNumber == 6) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 7) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 8) {
-            return true;
+            isCorrect = true;
           } else if (_soundNumber == 9) {
-            return false;
+            isCorrect = false;
           }
           break;
         case 4:
           if (_soundNumber == 0) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 1) {
-            return true;
+            isCorrect = true;
           } else if (_soundNumber == 2) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 3) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 4) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 5) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 6) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 7) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 8) {
-            return false;
+            isCorrect = false;
           } else if (_soundNumber == 9) {
-            return false;
+            isCorrect = false;
           }
           break;
       }
     } catch (e) {
       print(e);
-    } finally {
-      return false;
     }
+    return isCorrect;
+  }
+
+  reset() {
+    _soundNumber = 0;
   }
 
   nextQuestion() {
     _soundNumber++;
   }
 
+  String getQuestionNumber() {
+    return _soundData[_soundNumber].number.toString();
+  }
+
   playSound() {
     if (!isPlaying) {
-      _soundData[_soundNumber].sound;
+      cachePlayer.play(_soundData[_soundNumber].sound);
       isPlaying = true;
       stopSound();
     }
   }
 
+  bool isEnd() {
+    bool ended = false;
+    if (_soundNumber == _soundData.length) {
+      ended = true;
+    }
+    return ended;
+  }
+
+  getSoundQuestion() {
+    print('Sound Number: $_soundNumber');
+    print('Alternatives: ${_soundData[_soundNumber].choices}');
+  }
+
   stopSound() {
     if (isPlaying) {
       player.onAudioPositionChanged.listen((Duration d) {
-        if (d >= (const Duration(milliseconds: 5000))) {
+        if (d >= (const Duration(seconds: 5))) {
           player.stop();
         }
         isPlaying = false;
@@ -156,7 +180,12 @@ class SoundBrain {
     }
   }
 
-  getChoice(int index) {
-    _soundData[_soundNumber].choices[index - 1];
+  showChoice() {
+    print(_soundData[_soundNumber].choices[1]);
+    //_soundData[_soundNumber].choices[0];
+  }
+
+  String getChoice(int index) {
+    return _soundData[_soundNumber].choices[index - 1];
   }
 }
