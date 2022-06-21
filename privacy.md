@@ -1,37 +1,30 @@
-## Welcome to GitHub Pages
+Política Privacidade
+--------------------
 
-You can use the [editor on GitHub](https://github.com/Aan3dree/AssistantLearnUP/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A sua privacidade é importante para nós. É política do AssistantLearnUp respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site AssistantLearnUp, e outros sites que possuímos e operamos.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.
 
-### Markdown
+Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.
 
-```markdown
-Syntax highlighted code block
+O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas [políticas de privacidade](https://politicaprivacidade.com).
 
-# Header 1
-## Header 2
-### Header 3
+Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.
 
-- Bulleted
-- List
+O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de [Aviso de Privacidad](https://avisodeprivacidad.info/) e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contacto connosco.
 
-1. Numbered
-2. List
+### Compromisso do Usuário
 
-**Bold** and _Italic_ and `Code` text
+O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o AssistantLearnUp oferece no site e com caráter enunciativo, mas não limitativo:
 
-[Link](url) and ![Image](src)
-```
+*   A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;
+*   B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, [Onde ver a Bola](https://ondeapostar.pt/onde-da-a-bola/) ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;
+*   C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do AssistantLearnUp, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Mais informações
 
-### Jekyll Themes
+Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Aan3dree/AssistantLearnUP/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Esta política é efetiva a partir de **June**/**2022**.
