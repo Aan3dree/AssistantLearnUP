@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.assistant_learn_up">
+    package="com.andrev.assistant_learn_up">
    <application
         android:label="assistant_learn_up"
         android:name="${applicationName}"

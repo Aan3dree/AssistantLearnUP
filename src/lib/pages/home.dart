@@ -1,4 +1,5 @@
 import 'package:assistant_learn_up/pages/assistant_quiz_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'sound_quiz_page.dart';
@@ -16,6 +17,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _auth = FirebaseAuth.instance;
+  late User? logedUser;
+
+  Future getCurentUser() async {
+    final user = await _auth.currentUser;
+    try {
+      logedUser = user;
+      print(logedUser?.displayName);
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getCurentUser();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
