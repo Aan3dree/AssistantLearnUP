@@ -6,6 +6,9 @@ import 'sound_quiz_page.dart';
 import 'assistant_quiz_page.dart';
 import 'learn_page.dart';
 import '../services/httpHelper.dart';
+//TODO app bar
+//TODO butoes
+//TODO hello user name
 
 HttpHelper httpHelper = HttpHelper();
 
