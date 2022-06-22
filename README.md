@@ -1,5 +1,5 @@
 # Assistant Learn'UP
-
+//TODO objetivos
 ## Visão Geral
 O aplicativo se trata de uma plataforma de educação e divulgação cientifica voltada para o tema de assistentes virtuais, visando desmistificar o funcionamento dos bastidores destes assistentes, levando o conhecimento de forma lúdica para o usuário.
 
