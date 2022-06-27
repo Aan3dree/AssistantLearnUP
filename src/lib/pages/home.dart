@@ -6,9 +6,7 @@ import 'sound_quiz_page.dart';
 import 'assistant_quiz_page.dart';
 import 'learn_page.dart';
 import '../services/httpHelper.dart';
-//TODO app bar
-//TODO butoes
-//TODO hello user name
+import '../components/my_button.dart';
 
 HttpHelper httpHelper = HttpHelper();
 
@@ -21,7 +19,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _auth = FirebaseAuth.instance;
-  late User? logedUser;
+  User? logedUser;
 
   Future getCurentUser() async {
     final user = await _auth.currentUser;
@@ -36,115 +34,92 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    getCurentUser();
+    getCurentUser().whenComplete(() {
+      setState(() {});
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    print(logedUser?.displayName);
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Assistant Learn\'Up'),
-        backgroundColor: Colors.teal,
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            flex: 2,
-            child: Icon(
-              FontAwesomeIcons.user,
-              color: Colors.white,
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              height: 10,
             ),
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 26, 121, 75),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    SoundQuestionPage()));
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Sound Quiz',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
-                        ),
-                      ),
-                    ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                          backgroundColor: Colors.blueGrey),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    AssistantQuizPage()));
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Assistent Quiz',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
-                        ),
-                      ),
-                    ),
-                  ],
+                Text(
+                  'Assistant Learn\'Up',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
-                  height: 25,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    TextButton(
-                      style: TextButton.styleFrom(
-                          backgroundColor: Colors.lightBlue),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    LearnAssistantPage()));
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Learn Page',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
-                        ),
-                      ),
-                    ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                          backgroundColor: Colors.lightBlue),
-                      onPressed: () {
-                        httpHelper.fetchData();
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Fetch',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                IconButton(
+                    onPressed: () {
+                      _auth.signOut();
+                    },
+                    icon: Icon(Icons.logout))
               ],
             ),
-          )
-        ],
+            Expanded(
+              flex: 3,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Bem vindo, ${logedUser?.displayName}',
+                    style: TextStyle(fontSize: 22),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Text(
+                "O que você gostaria de fazer?",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            MyButton(
+                buttonColor: Colors.lightGreen,
+                buttonLabel: 'Aprenda Assistentes Virtuais',
+                onPress: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              LearnAssistantPage()));
+                }),
+            MyButton(
+                buttonColor: Colors.lightBlue,
+                buttonLabel: 'Quiz Assistentes Virtuais',
+                onPress: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              AssistantQuizPage()));
+                }),
+            MyButton(
+                buttonColor: Colors.tealAccent,
+                buttonLabel: 'Quiz Intrumentos Musicais',
+                onPress: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              SoundQuestionPage()));
+                }),
+            SizedBox(
+              height: 20,
+            )
+          ],
+        ),
       ),
     );
   }
