@@ -1,5 +1,5 @@
 # Assistant Learn'UP
-//TODO objetivos
+
 ## Visão Geral
 O aplicativo se trata de uma plataforma de educação e divulgação cientifica voltada para o tema de assistentes virtuais, visando desmistificar o funcionamento dos bastidores destes assistentes, levando o conhecimento de forma lúdica para o usuário.
 
@@ -7,9 +7,9 @@ O público alvo desta aplicação são pessoas de diferentes faixas etárias que
 
 ## Objetivos
 
-1. **Aprendizagem:** Um dos principais objetivos do aplicativo é levar a aprendizagem sobre assistentes virtuais de forma lúdica ao usuário.
+1. **Aprendizagem sobre assistentes virtuais:** Um dos principais objetivos do aplicativo é levar a aprendizagem sobre assistentes virtuais de forma lúdica ao usuário.
 
-2. **Divulgação Científica:** Um outro objetivo do aplicativo é difundir o que se tem de novidade científica relativo ao tema de assistentes virtuais.
+2. **Aprendizagem sobre instrumentos musicais:** Um outro objetivo do aplicativo é fazer com que o usuário consiga identificar sons de instrumentos musicais
 
 ## Especificações
 
