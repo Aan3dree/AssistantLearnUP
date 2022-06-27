@@ -4,7 +4,6 @@ import '../components/my_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-//TODO tratamento e validação
 //TODO google sign in
 
 class LoginPage extends StatefulWidget {
