@@ -101,6 +101,26 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       _saving = false;
                     });
                   } catch (e) {
+                    setState(() {
+                      _saving = false;
+                    });
+                    Alert(
+                        type: AlertType.error,
+                        style: AlertStyle(backgroundColor: Colors.white),
+                        context: context,
+                        title: "Erro",
+                        desc: "Erro ao fazer login",
+                        buttons: [
+                          DialogButton(
+                            child: Text(
+                              "Cancelar",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 20),
+                            ),
+                            onPressed: () => Navigator.pop(context),
+                            width: 120,
+                          )
+                        ]).show();
                     print(e);
                   }
                 },
