@@ -25,7 +25,4 @@ A aplicação deverá ser construída em Flutter e Dart, possuir código aberto 
 
     Trazer elementos de jogos para a aplicação de forma a envolver os usuários com o tema central e engajá-los a continuarem utilizando o aplicativo, promovendo assim uma aprendizagem de forma divertida.
 
-3. Contexto do Google Acadêmico
-
-    Utilizar o Google Acadêmico no aplicativo de forma dinâmica, para que as novidades e novos artigos publicados e relativos à assistentes virtuais possam ser mostrados na aplicação.
 
