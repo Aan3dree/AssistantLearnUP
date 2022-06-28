@@ -38,7 +38,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
             TextField(
               keyboardType: TextInputType.emailAddress,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.white),
               onChanged: (value) {
                 displayName = value;
               },
@@ -51,7 +51,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
             TextField(
               keyboardType: TextInputType.emailAddress,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.white),
               onChanged: (value) {
                 email = value;
               },
@@ -64,7 +64,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
             TextField(
               obscureText: true,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.white),
               onChanged: (value) {
                 password = value;
               },
