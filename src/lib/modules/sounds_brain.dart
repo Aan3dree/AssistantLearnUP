@@ -141,6 +141,7 @@ class SoundBrain {
   }
 
   nextQuestion() {
+    stopSound();
     _soundNumber++;
   }
 
