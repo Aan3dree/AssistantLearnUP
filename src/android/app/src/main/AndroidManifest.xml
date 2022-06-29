@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.andrev.assistant_learn_up">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="assistant_learn_up"
+        android:label="Assistant LearnUp"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

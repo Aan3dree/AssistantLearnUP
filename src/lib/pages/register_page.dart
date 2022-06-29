@@ -1,3 +1,4 @@
+import 'package:assistant_learn_up/components/my_button.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../utils/constants.dart';
@@ -20,92 +21,117 @@ class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: ModalProgressHUD(
         inAsyncCall: _saving,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(
-              height: 100,
+              height: 50,
             ),
             Container(
               height: 130,
               child: Image.asset('assets/images/playstore.png'),
             ),
             SizedBox(
-              height: 40,
+              height: 20,
             ),
-            TextField(
-              keyboardType: TextInputType.emailAddress,
+            Text(
+              'Assistant Learn\'Up',
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.black),
-              onChanged: (value) {
-                displayName = value;
-              },
-              decoration:
-                  kInputDecoration.copyWith(hintText: 'Digite seu Nome'),
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 32, 8, 4),
+              child: TextField(
+                keyboardType: TextInputType.emailAddress,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
+                onChanged: (value) {
+                  displayName = value;
+                },
+                decoration:
+                    kInputDecoration.copyWith(hintText: 'Digite seu Nome'),
+              ),
             ),
             SizedBox(
               height: 8.0,
             ),
-            TextField(
-              keyboardType: TextInputType.emailAddress,
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.black),
-              onChanged: (value) {
-                email = value;
-              },
-              decoration:
-                  kInputDecoration.copyWith(hintText: 'Digite seu Email'),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
+              child: TextField(
+                keyboardType: TextInputType.emailAddress,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
+                onChanged: (value) {
+                  email = value;
+                },
+                decoration:
+                    kInputDecoration.copyWith(hintText: 'Digite seu Email'),
+              ),
             ),
             SizedBox(
               height: 8.0,
             ),
-            TextField(
-              obscureText: true,
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.black),
-              onChanged: (value) {
-                password = value;
-              },
-              decoration:
-                  kInputDecoration.copyWith(hintText: 'Digite sua Senha'),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
+              child: TextField(
+                obscureText: true,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
+                onChanged: (value) {
+                  password = value;
+                },
+                decoration:
+                    kInputDecoration.copyWith(hintText: 'Digite sua Senha'),
+              ),
             ),
             SizedBox(
               height: 15,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.lightBlue),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    'Cadastrar',
-                    style: TextStyle(color: Colors.black87, fontSize: 18),
-                  ),
-                ),
-                onPressed: () async {
+            MyButton(
+              buttonColor: Colors.lightBlue,
+              buttonLabel: 'Cadastrar',
+              onPress: () async {
+                setState(() {
+                  _saving = true;
+                });
+                try {
+                  var user;
+                  await auth
+                      .createUserWithEmailAndPassword(
+                          email: email, password: password)
+                      .then((user) =>
+                          auth.currentUser?.updateDisplayName(displayName));
+                  Navigator.popAndPushNamed(context, '/login');
                   setState(() {
-                    _saving = true;
+                    _saving = false;
                   });
-                  try {
-                    var user;
-                    await auth
-                        .createUserWithEmailAndPassword(
-                            email: email, password: password)
-                        .then((user) =>
-                            auth.currentUser?.updateDisplayName(displayName));
-                    Navigator.popAndPushNamed(context, '/login');
-                    setState(() {
-                      _saving = false;
-                    });
-                  } catch (e) {
-                    print(e);
-                  }
-                },
-              ),
-            ),
+                } catch (e) {
+                  setState(() {
+                    _saving = false;
+                  });
+                  Alert(
+                      type: AlertType.error,
+                      style: AlertStyle(backgroundColor: Colors.white),
+                      context: context,
+                      title: "Erro",
+                      desc: "Erro ao fazer login",
+                      buttons: [
+                        DialogButton(
+                          child: Text(
+                            "Cancelar",
+                            style: TextStyle(color: Colors.black, fontSize: 20),
+                          ),
+                          onPressed: () => Navigator.pop(context),
+                          width: 120,
+                        )
+                      ]).show();
+                  print(e);
+                }
+              },
+            )
           ],
         ),
       ),
