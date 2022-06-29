@@ -40,6 +40,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _auth.signOut();
+  }
+
+  @override
   Widget build(BuildContext context) {
     print(logedUser?.displayName);
     return Scaffold(
@@ -62,6 +68,7 @@ class _HomePageState extends State<HomePage> {
                 IconButton(
                     onPressed: () {
                       _auth.signOut();
+                      Navigator.popAndPushNamed(context, '/login');
                     },
                     icon: Icon(Icons.logout))
               ],

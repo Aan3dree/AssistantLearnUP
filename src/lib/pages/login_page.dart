@@ -22,28 +22,40 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
+    auth.signOut();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: ModalProgressHUD(
         inAsyncCall: _loading,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const SizedBox(
-              height: 100,
+              height: 50,
             ),
             Container(
               height: 130,
               child: Image.asset('assets/images/playstore.png'),
             ),
             const SizedBox(
-              height: 40,
+              height: 20,
+            ),
+            Text(
+              'Assistant Learn\'Up',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.fromLTRB(8, 20, 8, 8),
               child: TextField(
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
