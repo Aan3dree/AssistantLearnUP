@@ -112,22 +112,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   setState(() {
                     _saving = false;
                   });
-                  Alert(
-                      type: AlertType.error,
-                      style: kAlertStyle,
-                      context: context,
-                      title: "Erro",
-                      desc: "Erro ao fazer login",
-                      buttons: [
-                        DialogButton(
-                          child: const Text(
-                            "Cancelar",
-                            style: kDialogTextStyle,
-                          ),
-                          onPressed: () => Navigator.pop(context),
-                          width: 120,
-                        )
-                      ]).show();
+                  _showAlert(context);
                   print(e);
                 }
               },
@@ -138,22 +123,22 @@ class _RegistrationPageState extends State<RegistrationPage> {
     );
   }
 
-  _onAlertButtonPressed(context) {
+  _showAlert(context) {
     Alert(
-      context: context,
-      type: AlertType.error,
-      title: "RFLUTTER ALERT",
-      desc: "Flutter is more awesome with RFlutter Alert.",
-      buttons: [
-        DialogButton(
-          child: Text(
-            "COOL",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          onPressed: () => Navigator.popAndPushNamed(context, '/login'),
-          width: 120,
-        )
-      ],
-    ).show();
+        type: AlertType.error,
+        style: kAlertStyle,
+        context: context,
+        title: "Erro",
+        desc: "Erro ao fazer login",
+        buttons: [
+          DialogButton(
+            child: const Text(
+              "Cancelar",
+              style: kDialogTextStyle,
+            ),
+            onPressed: () => Navigator.pop(context),
+            width: 120,
+          )
+        ]).show();
   }
 }
