@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../utils/constants.dart';
 import '../components/my_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 //TODO google sign in
 
 class LoginPage extends StatefulWidget {
@@ -16,6 +18,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   late String email;
   late String password;
+  User? user;
   final auth = FirebaseAuth.instance;
   bool _loading = false;
 
@@ -124,25 +127,94 @@ class _LoginPageState extends State<LoginPage> {
               },
             ),
             const SizedBox(
-              height: 15,
+              height: 8,
             ),
             const Text(
               'Ainda não possui cadstro?',
               textAlign: TextAlign.center,
             ),
             const SizedBox(
-              height: 15,
+              height: 8,
             ),
-            MyButton(
-              buttonColor: Colors.lightGreen,
-              buttonLabel: 'Cadastre-se',
-              onPress: () {
-                Navigator.pushNamed(context, '/registration');
-              },
+            Row(
+              children: [
+                MyButton(
+                  buttonColor: Colors.lightGreen,
+                  buttonLabel: 'Cadastre-se',
+                  onPress: () {
+                    Navigator.pushNamed(context, '/registration');
+                  },
+                ),
+                const Text(
+                  'Ou entre com o Google',
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                IconButton(
+                  onPressed: () async {
+                    setState(() {
+                      _loading = true;
+                    });
+                    try {
+                      UserCredential userCred = await signInWithGoogle();
+                      user = userCred.user;
+                      if (user != null) {
+                        Navigator.pushNamed(context, '/home');
+                        setState(() {
+                          _loading = false;
+                        });
+                      }
+                    } catch (e) {
+                      setState(() {
+                        _loading = false;
+                      });
+                      Alert(
+                          type: AlertType.error,
+                          style: AlertStyle(backgroundColor: Colors.white),
+                          context: context,
+                          title: "Erro",
+                          desc: "Erro ao fazer login",
+                          buttons: [
+                            DialogButton(
+                              child: Text(
+                                "Cancelar",
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 20),
+                              ),
+                              onPressed: () => Navigator.pop(context),
+                              width: 120,
+                            )
+                          ]).show();
+                      print(e);
+                    }
+                  },
+                  icon: const Icon(FontAwesomeIcons.google),
+                )
+              ],
             ),
           ],
         ),
       ),
     );
+  }
+
+  Future<UserCredential> signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    // Once signed in, return the UserCredential
+    return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 }

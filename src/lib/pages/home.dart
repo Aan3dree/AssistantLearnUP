@@ -7,6 +7,7 @@ import 'assistant_quiz_page.dart';
 import 'learn_page.dart';
 import '../services/httpHelper.dart';
 import '../components/my_button.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 HttpHelper httpHelper = HttpHelper();
 
@@ -20,12 +21,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _auth = FirebaseAuth.instance;
   User? logedUser;
+  GoogleSignInAccount? logedGoogleUser;
 
   Future getCurentUser() async {
     final user = await _auth.currentUser;
+    final googleUser = await GoogleSignIn().currentUser;
     try {
       logedUser = user;
+      logedGoogleUser = googleUser;
       print(logedUser?.displayName);
+      print(logedGoogleUser?.displayName);
     } catch (e) {
       print(e);
     }
@@ -78,10 +83,15 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Bem vindo, ${logedUser?.displayName}',
-                    style: TextStyle(fontSize: 22),
-                  ),
+                  logedGoogleUser?.displayName != null
+                      ? Text(
+                          'Olá, ${logedGoogleUser?.displayName}',
+                          style: TextStyle(fontSize: 22),
+                        )
+                      : Text(
+                          'Bem vindo, ${logedUser?.displayName}',
+                          style: TextStyle(fontSize: 22),
+                        ),
                 ],
               ),
             ),
