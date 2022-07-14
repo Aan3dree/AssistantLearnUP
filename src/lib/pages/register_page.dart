@@ -37,11 +37,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
             const SizedBox(
               height: 20,
             ),
-            const Text(
-              'Assistant Learn\'Up',
-              textAlign: TextAlign.center,
-              style: kTitleTextStyle,
-            ),
+            kTitle,
             Padding(
               padding: const EdgeInsets.fromLTRB(8, 32, 8, 4),
               child: TextField(
