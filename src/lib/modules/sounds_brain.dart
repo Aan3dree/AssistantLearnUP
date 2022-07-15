@@ -131,7 +131,7 @@ class SoundBrain {
           break;
       }
     } catch (e) {
-      print(e);
+      //print(e);
     }
     return isCorrect;
   }
@@ -157,19 +157,6 @@ class SoundBrain {
     }
   }
 
-  bool isEnd() {
-    bool ended = false;
-    if (_soundNumber == _soundData.length) {
-      ended = true;
-    }
-    return ended;
-  }
-
-  getSoundQuestion() {
-    print('Sound Number: $_soundNumber');
-    print('Alternatives: ${_soundData[_soundNumber].choices}');
-  }
-
   stopSound() {
     if (isPlaying) {
       player.onAudioPositionChanged.listen((Duration d) {
@@ -181,8 +168,29 @@ class SoundBrain {
     }
   }
 
+  playCardSound(sound) {
+    if (!isPlaying) {
+      cachePlayer.play('sounds/$sound.mp3');
+      isPlaying = true;
+      stopSound();
+    }
+  }
+
+  bool isEnd() {
+    bool ended = false;
+    if (_soundNumber == _soundData.length) {
+      ended = true;
+    }
+    return ended;
+  }
+
+  getSoundQuestion() {
+    //print('Sound Number: $_soundNumber');
+    //print('Alternatives: ${_soundData[_soundNumber].choices}');
+  }
+
   showChoice() {
-    print(_soundData[_soundNumber].choices[1]);
+    //(_soundData[_soundNumber].choices[1]);
     //_soundData[_soundNumber].choices[0];
   }
 

@@ -27,27 +27,23 @@ class _RegistrationPageState extends State<RegistrationPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Container(
               height: 130,
               child: Image.asset('assets/images/playstore.png'),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
-              'Assistant Learn\'Up',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-            ),
+            kTitle,
             Padding(
               padding: const EdgeInsets.fromLTRB(8, 32, 8, 4),
               child: TextField(
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+                style: kInputTextColor,
                 onChanged: (value) {
                   displayName = value;
                 },
@@ -55,7 +51,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     kInputDecoration.copyWith(hintText: 'Digite seu Nome'),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8.0,
             ),
             Padding(
@@ -63,7 +59,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               child: TextField(
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+                style: kInputTextColor,
                 onChanged: (value) {
                   email = value;
                 },
@@ -71,7 +67,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     kInputDecoration.copyWith(hintText: 'Digite seu Email'),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8.0,
             ),
             Padding(
@@ -79,7 +75,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               child: TextField(
                 obscureText: true,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+                style: kInputTextColor,
                 onChanged: (value) {
                   password = value;
                 },
@@ -87,7 +83,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     kInputDecoration.copyWith(hintText: 'Digite sua Senha'),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             MyButton(
@@ -112,23 +108,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   setState(() {
                     _saving = false;
                   });
-                  Alert(
-                      type: AlertType.error,
-                      style: AlertStyle(backgroundColor: Colors.white),
-                      context: context,
-                      title: "Erro",
-                      desc: "Erro ao fazer login",
-                      buttons: [
-                        DialogButton(
-                          child: Text(
-                            "Cancelar",
-                            style: TextStyle(color: Colors.black, fontSize: 20),
-                          ),
-                          onPressed: () => Navigator.pop(context),
-                          width: 120,
-                        )
-                      ]).show();
-                  print(e);
+                  _showAlert(context);
+                  //print(e);
                 }
               },
             )
@@ -138,22 +119,22 @@ class _RegistrationPageState extends State<RegistrationPage> {
     );
   }
 
-  _onAlertButtonPressed(context) {
+  _showAlert(context) {
     Alert(
-      context: context,
-      type: AlertType.error,
-      title: "RFLUTTER ALERT",
-      desc: "Flutter is more awesome with RFlutter Alert.",
-      buttons: [
-        DialogButton(
-          child: Text(
-            "COOL",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          onPressed: () => Navigator.popAndPushNamed(context, '/login'),
-          width: 120,
-        )
-      ],
-    ).show();
+        type: AlertType.error,
+        style: kAlertStyle,
+        context: context,
+        title: "Erro",
+        desc: "Erro ao fazer login",
+        buttons: [
+          DialogButton(
+            child: const Text(
+              "Cancelar",
+              style: kDialogTextStyle,
+            ),
+            onPressed: () => Navigator.pop(context),
+            width: 120,
+          )
+        ]).show();
   }
 }

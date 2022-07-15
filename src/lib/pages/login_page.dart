@@ -6,7 +6,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-//TODO google sign in
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -52,11 +51,7 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(
               height: 20,
             ),
-            Text(
-              'Assistant Learn\'Up',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-            ),
+            kTitle,
             Padding(
               padding: const EdgeInsets.fromLTRB(8, 20, 8, 8),
               child: TextField(
@@ -106,23 +101,8 @@ class _LoginPageState extends State<LoginPage> {
                   setState(() {
                     _loading = false;
                   });
-                  Alert(
-                      type: AlertType.error,
-                      style: AlertStyle(backgroundColor: Colors.white),
-                      context: context,
-                      title: "Erro",
-                      desc: "Erro ao fazer login",
-                      buttons: [
-                        DialogButton(
-                          child: Text(
-                            "Cancelar",
-                            style: TextStyle(color: Colors.black, fontSize: 20),
-                          ),
-                          onPressed: () => Navigator.pop(context),
-                          width: 120,
-                        )
-                      ]).show();
-                  print(e);
+                  _showAlert(context, 'Erro', 'Erro ao fazer login');
+                  //print(e);
                 }
               },
             ),
@@ -170,24 +150,8 @@ class _LoginPageState extends State<LoginPage> {
                       setState(() {
                         _loading = false;
                       });
-                      Alert(
-                          type: AlertType.error,
-                          style: AlertStyle(backgroundColor: Colors.white),
-                          context: context,
-                          title: "Erro",
-                          desc: "Erro ao fazer login",
-                          buttons: [
-                            DialogButton(
-                              child: Text(
-                                "Cancelar",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
-                              ),
-                              onPressed: () => Navigator.pop(context),
-                              width: 120,
-                            )
-                          ]).show();
-                      print(e);
+                      _showAlert(context, 'Erro', 'Erro ao fazer login');
+                      //print(e);
                     }
                   },
                   icon: const Icon(FontAwesomeIcons.google),
@@ -216,5 +180,24 @@ class _LoginPageState extends State<LoginPage> {
 
     // Once signed in, return the UserCredential
     return await FirebaseAuth.instance.signInWithCredential(credential);
+  }
+
+  _showAlert(context, title, label) {
+    Alert(
+        type: AlertType.error,
+        style: kAlertStyle,
+        context: context,
+        title: title,
+        desc: label,
+        buttons: [
+          DialogButton(
+            child: const Text(
+              "Cancelar",
+              style: kDialogTextStyle,
+            ),
+            onPressed: () => Navigator.pop(context),
+            width: 120,
+          )
+        ]).show();
   }
 }

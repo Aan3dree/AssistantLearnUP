@@ -1,9 +1,10 @@
 import 'package:assistant_learn_up/pages/assistant_quiz_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../utils/constants.dart';
 import 'sound_quiz_page.dart';
 import 'assistant_quiz_page.dart';
+import 'instruments_page.dart';
 import 'learn_page.dart';
 import '../services/httpHelper.dart';
 import '../components/my_button.dart';
@@ -29,10 +30,10 @@ class _HomePageState extends State<HomePage> {
     try {
       logedUser = user;
       logedGoogleUser = googleUser;
-      print(logedUser?.displayName);
-      print(logedGoogleUser?.displayName);
+      //print(logedUser?.displayName);
+      //print(logedGoogleUser?.displayName);
     } catch (e) {
-      print(e);
+      //print(e);
     }
   }
 
@@ -52,30 +53,26 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print(logedUser?.displayName);
+    //print(logedUser?.displayName);
     return Scaffold(
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text(
-                  'Assistant Learn\'Up',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
+                kHomeTitle,
                 IconButton(
                     onPressed: () {
                       _auth.signOut();
                       Navigator.popAndPushNamed(context, '/login');
                     },
-                    icon: Icon(Icons.logout))
+                    icon: const Icon(Icons.logout))
               ],
             ),
             Expanded(
@@ -86,22 +83,16 @@ class _HomePageState extends State<HomePage> {
                   logedGoogleUser?.displayName != null
                       ? Text(
                           'Olá, ${logedGoogleUser?.displayName}',
-                          style: TextStyle(fontSize: 22),
+                          style: kUserNameStyle,
                         )
                       : Text(
                           'Bem vindo, ${logedUser?.displayName}',
-                          style: TextStyle(fontSize: 22),
+                          style: kUserNameStyle,
                         ),
                 ],
               ),
             ),
-            Expanded(
-              child: Text(
-                "O que você gostaria de fazer?",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
+            kHomeMessage,
             MyButton(
                 buttonColor: Colors.lightGreen,
                 buttonLabel: 'Aprenda Assistentes Virtuais',
@@ -110,7 +101,17 @@ class _HomePageState extends State<HomePage> {
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext context) =>
-                              LearnAssistantPage()));
+                              const LearnAssistantPage()));
+                }),
+            MyButton(
+                buttonColor: const Color.fromARGB(255, 163, 227, 247),
+                buttonLabel: 'Conheça Instrumentos Musicais',
+                onPress: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const InstrumentPage()));
                 }),
             MyButton(
                 buttonColor: Colors.lightBlue,
@@ -120,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext context) =>
-                              AssistantQuizPage()));
+                              const AssistantQuizPage()));
                 }),
             MyButton(
                 buttonColor: Colors.tealAccent,
@@ -130,9 +131,9 @@ class _HomePageState extends State<HomePage> {
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext context) =>
-                              SoundQuestionPage()));
+                              const SoundQuestionPage()));
                 }),
-            SizedBox(
+            const SizedBox(
               height: 20,
             )
           ],

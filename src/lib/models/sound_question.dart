@@ -1,7 +1,3 @@
-import 'dart:ffi';
-
-import 'package:audioplayers/audioplayers.dart';
-
 class SoundQuestion {
   String sound;
   List<String> choices;

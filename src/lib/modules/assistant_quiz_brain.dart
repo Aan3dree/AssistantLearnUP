@@ -77,9 +77,9 @@ class AssistantQuizBrain {
   }
 
   void nextQuestion() {
-    print('Question number $_questionNumber');
+    //print('Question number $_questionNumber');
     _questionNumber++;
-    print('Question number $_questionNumber');
+    //print('Question number $_questionNumber');
     /*
     try {
       if (!isFinished()) {
@@ -107,8 +107,8 @@ class AssistantQuizBrain {
         return false;
       }
     } catch (e) {
-      print('crashou no isFinished e vai retornar false');
-      print(e);
+      //print('crashou no isFinished e vai retornar false');
+      //print(e);
     } finally {
       return false;
     }
