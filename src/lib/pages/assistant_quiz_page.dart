@@ -58,7 +58,7 @@ class _AssistantQuizPageState extends State<AssistantQuizPage> {
                         if (quizBrain.isCorrectAnswer(1)) {
                           scoreKeeper.add(const Icon(FontAwesomeIcons.check));
                         } else {
-                          scoreKeeper.add(const Icon(FontAwesomeIcons.close));
+                          scoreKeeper.add(const Icon(FontAwesomeIcons.xmark));
                         }
                         quizBrain.nextQuestion();
                         //print(pageIndex);
