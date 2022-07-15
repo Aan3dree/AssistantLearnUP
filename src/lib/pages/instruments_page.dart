@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../modules/sounds_brain.dart';
+
+SoundBrain soundBrain = SoundBrain();
 
 class InstrumentPage extends StatefulWidget {
   const InstrumentPage({Key? key}) : super(key: key);
@@ -9,9 +12,18 @@ class InstrumentPage extends StatefulWidget {
 
 class _InstrumentPageState extends State<InstrumentPage> {
   @override
+  void dispose() {
+    super.dispose();
+    soundBrain.stopSound();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Instrumentos'), backgroundColor: Colors.teal,),
+      appBar: AppBar(
+        title: Text('Instrumentos'),
+        backgroundColor: Colors.teal,
+      ),
       body: GridView.count(
         primary: false,
         padding: const EdgeInsets.all(20),
@@ -22,42 +34,222 @@ class _InstrumentPageState extends State<InstrumentPage> {
           Container(
             padding: const EdgeInsets.all(8),
             color: Colors.teal[100],
-            child: const Text("He'd have you all unravel at the"),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    soundBrain.playCardSound('violino');
+                  },
+                  child: Image.network("https://i.imgur.com/sHRbhc7.png"),
+                ),
+                Text(
+                  "Violino",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[200],
-            child: const Text('Heed not the rabble'),
+            color: Colors.teal[100],
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    soundBrain.playCardSound('acordeon');
+                  },
+                  child: Image.network("https://i.imgur.com/B3tfKcI.png"),
+                ),
+                Text(
+                  "Acordeon",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[300],
-            child: const Text('Sound of screams but the'),
+            color: Colors.teal[100],
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    soundBrain.playCardSound('alfaia');
+                  },
+                  child: Image.network("https://i.imgur.com/9XoMB2E.png"),
+                ),
+                Text(
+                  "Alfaia",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[400],
-            child: const Text('Who scream'),
+            color: Colors.teal[100],
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    soundBrain.playCardSound('atabaque');
+                  },
+                  child: Image.network("https://i.imgur.com/tx3VUSP.png"),
+                ),
+                Text(
+                  "Atabaque",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[500],
-            child: const Text('Revolution is coming...'),
+            color: Colors.teal[100],
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    soundBrain.playCardSound('berimbau');
+                  },
+                  child: Image.network("https://i.imgur.com/CeztqJd.png"),
+                ),
+                Text(
+                  "Berimbau",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[600],
-            child: const Text('Revolution, they...'),
+            color: Colors.teal[100],
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    soundBrain.playCardSound('harpa');
+                  },
+                  child: Image.network("https://i.imgur.com/zIC4XCO.png"),
+                ),
+                Text(
+                  "Harpa",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[500],
-            child: const Text('Revolution is coming...'),
+            color: Colors.teal[100],
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    soundBrain.playCardSound('pandeiro');
+                  },
+                  child: Image.network("https://i.imgur.com/h1OkTgJ.png"),
+                ),
+                Text(
+                  "Pandeiro",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[600],
-            child: const Text('Revolution, they...'),
+            color: Colors.teal[100],
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    soundBrain.playCardSound('teclado');
+                  },
+                  child: Image.network("https://i.imgur.com/OqDOjTJ.png"),
+                ),
+                Text(
+                  "Teclado",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            color: Colors.teal[100],
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    soundBrain.playCardSound('violao');
+                  },
+                  child: Image.network("https://i.imgur.com/eAJxmSe.png"),
+                ),
+                Text(
+                  "Violão",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            color: Colors.teal[100],
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    soundBrain.playCardSound('zabumba');
+                  },
+                  child: Image.network("https://i.imgur.com/LLlRo7Y.png"),
+                ),
+                Text(
+                  "Zabumba",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
         ],
       ),
