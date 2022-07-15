@@ -21,7 +21,7 @@ class _InstrumentPageState extends State<InstrumentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Instrumentos'),
+        title: const Text('Instrumentos'),
         backgroundColor: Colors.teal,
       ),
       body: GridView.count(
@@ -43,7 +43,7 @@ class _InstrumentPageState extends State<InstrumentPage> {
                   },
                   child: Image.network("https://i.imgur.com/sHRbhc7.png"),
                 ),
-                Text(
+                const Text(
                   "Violino",
                   style: TextStyle(
                       fontSize: 18,
@@ -65,7 +65,7 @@ class _InstrumentPageState extends State<InstrumentPage> {
                   },
                   child: Image.network("https://i.imgur.com/B3tfKcI.png"),
                 ),
-                Text(
+                const Text(
                   "Acordeon",
                   style: TextStyle(
                       fontSize: 18,
@@ -87,7 +87,7 @@ class _InstrumentPageState extends State<InstrumentPage> {
                   },
                   child: Image.network("https://i.imgur.com/9XoMB2E.png"),
                 ),
-                Text(
+                const Text(
                   "Alfaia",
                   style: TextStyle(
                       fontSize: 18,
@@ -109,7 +109,7 @@ class _InstrumentPageState extends State<InstrumentPage> {
                   },
                   child: Image.network("https://i.imgur.com/tx3VUSP.png"),
                 ),
-                Text(
+                const Text(
                   "Atabaque",
                   style: TextStyle(
                       fontSize: 18,
@@ -131,7 +131,7 @@ class _InstrumentPageState extends State<InstrumentPage> {
                   },
                   child: Image.network("https://i.imgur.com/CeztqJd.png"),
                 ),
-                Text(
+                const Text(
                   "Berimbau",
                   style: TextStyle(
                       fontSize: 18,
@@ -153,7 +153,7 @@ class _InstrumentPageState extends State<InstrumentPage> {
                   },
                   child: Image.network("https://i.imgur.com/zIC4XCO.png"),
                 ),
-                Text(
+                const Text(
                   "Harpa",
                   style: TextStyle(
                       fontSize: 18,
@@ -175,7 +175,7 @@ class _InstrumentPageState extends State<InstrumentPage> {
                   },
                   child: Image.network("https://i.imgur.com/h1OkTgJ.png"),
                 ),
-                Text(
+                const Text(
                   "Pandeiro",
                   style: TextStyle(
                       fontSize: 18,
@@ -197,7 +197,7 @@ class _InstrumentPageState extends State<InstrumentPage> {
                   },
                   child: Image.network("https://i.imgur.com/OqDOjTJ.png"),
                 ),
-                Text(
+                const Text(
                   "Teclado",
                   style: TextStyle(
                       fontSize: 18,
@@ -219,7 +219,7 @@ class _InstrumentPageState extends State<InstrumentPage> {
                   },
                   child: Image.network("https://i.imgur.com/eAJxmSe.png"),
                 ),
-                Text(
+                const Text(
                   "Violão",
                   style: TextStyle(
                       fontSize: 18,
@@ -241,7 +241,7 @@ class _InstrumentPageState extends State<InstrumentPage> {
                   },
                   child: Image.network("https://i.imgur.com/LLlRo7Y.png"),
                 ),
-                Text(
+                const Text(
                   "Zabumba",
                   style: TextStyle(
                       fontSize: 18,
