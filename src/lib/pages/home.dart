@@ -105,14 +105,13 @@ class _HomePageState extends State<HomePage> {
                               LearnAssistantPage()));
                 }),
             MyButton(
-                buttonColor: Colors.teal.shade500,
+                buttonColor: Color.fromARGB(255, 163, 227, 247),
                 buttonLabel: 'Conheça Instrumentos Musicais',
                 onPress: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              InstrumentPage()));
+                          builder: (BuildContext context) => InstrumentPage()));
                 }),
             MyButton(
                 buttonColor: Colors.lightBlue,
