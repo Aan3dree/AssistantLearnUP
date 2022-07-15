@@ -1,4 +1,3 @@
-import 'package:assistant_learn_up/models/sound_question.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -21,23 +20,23 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
 
   void addScore(bool isCorrect) {
     if (isCorrect) {
-      scoreKeeper.add(Icon(FontAwesomeIcons.check));
+      scoreKeeper.add(const Icon(FontAwesomeIcons.check));
     } else {
-      scoreKeeper.add(Icon(FontAwesomeIcons.close));
+      scoreKeeper.add(const Icon(FontAwesomeIcons.xmark));
     }
   }
 
   void checkAnswer(int choice) {
     pageIndex++;
-    print(soundBrain.getCorrectAnswer(choice));
+    //print(soundBrain.getCorrectAnswer(choice));
     if (soundBrain.getCorrectAnswer(choice)) {
-      print('acertou');
+      //print('acertou');
       soundBrain.getSoundQuestion();
       soundBrain.nextQuestion();
       updateUI();
       addScore(true);
     } else {
-      print('errou');
+      //print('errou');
       soundBrain.getSoundQuestion();
       soundBrain.nextQuestion();
       updateUI();
@@ -66,18 +65,18 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz Musical'),
+        title: const Text('Quiz Musical'),
         backgroundColor: Colors.teal,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           end
-              ? Text('')
+              ? const Text('')
               : Expanded(
                   child: Text(
                     'Pergunta número $questionNumber',
@@ -86,7 +85,7 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
                   ),
                 ),
           end
-              ? Text(
+              ? const Text(
                   'Fim do Quiz',
                   style: TextStyle(fontSize: 24),
                   textAlign: TextAlign.center,
@@ -122,7 +121,7 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text(
+                      child: const Text(
                         'Voltar para home',
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
@@ -136,7 +135,7 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(
                       onPressed: () {
-                        print('questio1');
+                        //print('questio1');
                         setState(() {
                           if (pageIndex == 10) {
                             end = true;
@@ -147,7 +146,8 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
                       },
                       child: Text(
                         soundBrain.getChoice(1),
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 18),
                       ),
                       style: TextButton.styleFrom(
                           backgroundColor: Colors.blue.shade300),
@@ -155,14 +155,14 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
                   ),
                 ),
           end
-              ? Text('')
+              ? const Text('')
               : Expanded(
                   flex: 1,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(
                       onPressed: () {
-                        print('question2');
+                        //print('question2');
                         setState(() {
                           if (pageIndex == 10) {
                             end = true;
@@ -173,7 +173,8 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
                       },
                       child: Text(
                         soundBrain.getChoice(2),
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 18),
                       ),
                       style:
                           TextButton.styleFrom(backgroundColor: Colors.green),
@@ -181,14 +182,14 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
                   ),
                 ),
           end
-              ? Text('')
+              ? const Text('')
               : Expanded(
                   flex: 1,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(
                       onPressed: () {
-                        print('questio3');
+                        //print('questio3');
                         setState(() {
                           if (pageIndex == 10) {
                             end = true;
@@ -199,7 +200,8 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
                       },
                       child: Text(
                         soundBrain.getChoice(3),
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 18),
                       ),
                       style: TextButton.styleFrom(
                           backgroundColor: Colors.blue.shade500),
@@ -207,14 +209,14 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
                   ),
                 ),
           end
-              ? Text('')
+              ? const Text('')
               : Expanded(
                   flex: 1,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(
                       onPressed: () {
-                        print('question2');
+                        //print('question2');
                         setState(() {
                           if (pageIndex == 10) {
                             end = true;
@@ -225,7 +227,8 @@ class _SoundQuestionPageState extends State<SoundQuestionPage> {
                       },
                       child: Text(
                         soundBrain.getChoice(4),
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 18),
                       ),
                       style: TextButton.styleFrom(
                           backgroundColor: Colors.lightGreen),
@@ -252,7 +255,7 @@ class PlayButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: playSound,
-      child: Text('play'),
+      child: const Text('play'),
     );
   }
 }

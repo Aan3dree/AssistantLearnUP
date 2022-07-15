@@ -6,7 +6,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-//TODO google sign in
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -103,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                     _loading = false;
                   });
                   _showAlert(context, 'Erro', 'Erro ao fazer login');
-                  print(e);
+                  //print(e);
                 }
               },
             ),
@@ -152,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
                         _loading = false;
                       });
                       _showAlert(context, 'Erro', 'Erro ao fazer login');
-                      print(e);
+                      //print(e);
                     }
                   },
                   icon: const Icon(FontAwesomeIcons.google),

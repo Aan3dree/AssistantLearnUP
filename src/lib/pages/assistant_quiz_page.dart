@@ -95,7 +95,7 @@ class _AssistantQuizPageState extends State<AssistantQuizPage> {
                                   .add(const Icon(FontAwesomeIcons.check));
                             } else {
                               scoreKeeper
-                                  .add(const Icon(FontAwesomeIcons.close));
+                                  .add(const Icon(FontAwesomeIcons.xmark));
                             }
                             //print(pageIndex);
                             quizBrain.nextQuestion();
@@ -133,7 +133,7 @@ class _AssistantQuizPageState extends State<AssistantQuizPage> {
                                   .add(const Icon(FontAwesomeIcons.check));
                             } else {
                               scoreKeeper
-                                  .add(const Icon(FontAwesomeIcons.close));
+                                  .add(const Icon(FontAwesomeIcons.xmark));
                             }
                             quizBrain.nextQuestion();
                             //print(pageIndex);

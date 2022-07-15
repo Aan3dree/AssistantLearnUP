@@ -109,7 +109,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     _saving = false;
                   });
                   _showAlert(context);
-                  print(e);
+                  //print(e);
                 }
               },
             )

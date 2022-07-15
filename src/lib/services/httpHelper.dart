@@ -11,6 +11,6 @@ class HttpHelper {
         'https://serpapi.com/search?engine=google_scholar&q=alexa&apikey=${apiKey}');
         */
     final response = await http.get(url);
-    print(response.body);
+    //print(response.body);
   }
 }

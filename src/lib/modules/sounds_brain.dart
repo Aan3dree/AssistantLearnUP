@@ -131,7 +131,7 @@ class SoundBrain {
           break;
       }
     } catch (e) {
-      print(e);
+      //print(e);
     }
     return isCorrect;
   }
@@ -185,12 +185,12 @@ class SoundBrain {
   }
 
   getSoundQuestion() {
-    print('Sound Number: $_soundNumber');
-    print('Alternatives: ${_soundData[_soundNumber].choices}');
+    //print('Sound Number: $_soundNumber');
+    //print('Alternatives: ${_soundData[_soundNumber].choices}');
   }
 
   showChoice() {
-    print(_soundData[_soundNumber].choices[1]);
+    //(_soundData[_soundNumber].choices[1]);
     //_soundData[_soundNumber].choices[0];
   }
 

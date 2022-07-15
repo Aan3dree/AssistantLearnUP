@@ -1,7 +1,6 @@
 import 'package:assistant_learn_up/pages/assistant_quiz_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../utils/constants.dart';
 import 'sound_quiz_page.dart';
 import 'assistant_quiz_page.dart';
@@ -31,10 +30,10 @@ class _HomePageState extends State<HomePage> {
     try {
       logedUser = user;
       logedGoogleUser = googleUser;
-      print(logedUser?.displayName);
-      print(logedGoogleUser?.displayName);
+      //print(logedUser?.displayName);
+      //print(logedGoogleUser?.displayName);
     } catch (e) {
-      print(e);
+      //print(e);
     }
   }
 
@@ -54,7 +53,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print(logedUser?.displayName);
+    //print(logedUser?.displayName);
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -102,16 +101,17 @@ class _HomePageState extends State<HomePage> {
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext context) =>
-                              LearnAssistantPage()));
+                              const LearnAssistantPage()));
                 }),
             MyButton(
-                buttonColor: Color.fromARGB(255, 163, 227, 247),
+                buttonColor: const Color.fromARGB(255, 163, 227, 247),
                 buttonLabel: 'Conheça Instrumentos Musicais',
                 onPress: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (BuildContext context) => InstrumentPage()));
+                          builder: (BuildContext context) =>
+                              const InstrumentPage()));
                 }),
             MyButton(
                 buttonColor: Colors.lightBlue,
@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext context) =>
-                              AssistantQuizPage()));
+                              const AssistantQuizPage()));
                 }),
             MyButton(
                 buttonColor: Colors.tealAccent,
@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext context) =>
-                              SoundQuestionPage()));
+                              const SoundQuestionPage()));
                 }),
             const SizedBox(
               height: 20,

@@ -1,7 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
-//TODO contstants
-//TODO text style hint color
+const kTitleTextStyle = TextStyle(fontSize: 36, fontWeight: FontWeight.bold);
+
+const kTitle = Text(
+  'Assistant Learn\'Up',
+  textAlign: TextAlign.center,
+  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+);
+
+const kHomeTitle = Text(
+  'Assistant Learn\'Up',
+  textAlign: TextAlign.center,
+  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+);
+
+const kUserNameStyle = TextStyle(fontSize: 22);
+
+const kLearnPageTitleStyle =
+    TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+const kHomeMessage = Expanded(
+  child: Text(
+    "O que você gostaria de fazer?",
+    textAlign: TextAlign.center,
+    style: TextStyle(fontSize: 18),
+  ),
+);
+
+const kInputTextColor = TextStyle(color: Colors.white);
+
+const kAlertStyle = AlertStyle(backgroundColor: Colors.white);
+
+const kDialogTextStyle = TextStyle(color: Colors.black, fontSize: 20);
 
 const kSendButtonTextStyle = TextStyle(
   color: Colors.lightBlueAccent,
