@@ -157,6 +157,25 @@ class SoundBrain {
     }
   }
 
+  stopSound() {
+    if (isPlaying) {
+      player.onAudioPositionChanged.listen((Duration d) {
+        if (d >= (const Duration(seconds: 5))) {
+          player.stop();
+        }
+        isPlaying = false;
+      });
+    }
+  }
+
+  playCardSound(sound) {
+    if (!isPlaying) {
+      cachePlayer.play('sounds/$sound.mp3');
+      isPlaying = true;
+      stopSound();
+    }
+  }
+
   bool isEnd() {
     bool ended = false;
     if (_soundNumber == _soundData.length) {
@@ -168,17 +187,6 @@ class SoundBrain {
   getSoundQuestion() {
     print('Sound Number: $_soundNumber');
     print('Alternatives: ${_soundData[_soundNumber].choices}');
-  }
-
-  stopSound() {
-    if (isPlaying) {
-      player.onAudioPositionChanged.listen((Duration d) {
-        if (d >= (const Duration(seconds: 5))) {
-          player.stop();
-        }
-        isPlaying = false;
-      });
-    }
   }
 
   showChoice() {
