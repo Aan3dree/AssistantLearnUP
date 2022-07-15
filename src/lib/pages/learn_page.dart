@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../modules/assistant_learn_data.dart';
+import '../utils/constants.dart';
 
 AssistentLearnData assistantData = AssistentLearnData();
 
@@ -21,7 +22,7 @@ class _LearnAssistantPageState extends State<LearnAssistantPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Aprendendo Assistentes Virtuais'),
+        title: const Text('Aprendendo Assistentes Virtuais'),
         backgroundColor: Colors.teal,
       ),
       body: Column(
@@ -33,7 +34,7 @@ class _LearnAssistantPageState extends State<LearnAssistantPage> {
               padding: const EdgeInsets.only(top: 40),
               child: Text(
                 assistantData.getTitle(),
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: kLearnPageTitleStyle,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -44,8 +45,8 @@ class _LearnAssistantPageState extends State<LearnAssistantPage> {
               padding: const EdgeInsets.all(12.0),
               child: Text(
                 assistantData.getText(),
-                style: TextStyle(fontSize: 18),
-                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 20, fontFamily: 'Poppins'),
+                textAlign: TextAlign.justify,
               ),
             ),
           ),
@@ -66,11 +67,11 @@ class _LearnAssistantPageState extends State<LearnAssistantPage> {
                             pageNumber--;
                           });
                         },
-                        child: Icon(
+                        child: const Icon(
                           FontAwesomeIcons.arrowLeft,
                         ),
                       ),
-                pageNumber == 8
+                pageNumber == 13
                     ? Icon(
                         FontAwesomeIcons.arrowRight,
                         color: Colors.grey.shade600,
@@ -82,7 +83,7 @@ class _LearnAssistantPageState extends State<LearnAssistantPage> {
                             pageNumber++;
                           });
                         },
-                        child: Icon(
+                        child: const Icon(
                           FontAwesomeIcons.arrowRight,
                         ),
                       ),
