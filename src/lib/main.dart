@@ -24,12 +24,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(primaryColor: Colors.teal),
       initialRoute: '/login',
       routes: {
-        '/login': (context) => LoginPage(),
-        '/registration': (context) => RegistrationPage(),
-        '/home': (context) => HomePage(),
-        '/sound_quiz': (context) => SoundQuestionPage(),
-        '/assistant_quiz': (context) => AssistantQuizPage(),
-        '/learn': (context) => LearnAssistantPage()
+        '/login': (context) => const LoginPage(),
+        '/registration': (context) => const RegistrationPage(),
+        '/home': (context) => const HomePage(),
+        '/sound_quiz': (context) => const SoundQuestionPage(),
+        '/assistant_quiz': (context) => const AssistantQuizPage(),
+        '/learn': (context) => const LearnAssistantPage()
       },
     );
   }
