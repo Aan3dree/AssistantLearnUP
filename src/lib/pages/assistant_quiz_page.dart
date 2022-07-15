@@ -20,7 +20,7 @@ class _AssistantQuizPageState extends State<AssistantQuizPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz das Assistentes Virtuais'),
+        title: const Text('Quiz das Assistentes Virtuais'),
         backgroundColor: Colors.teal,
       ),
       body: Column(
@@ -34,7 +34,7 @@ class _AssistantQuizPageState extends State<AssistantQuizPage> {
               child: Center(
                 child: Text(
                   quizBrain.getQuestion(),
-                  style: TextStyle(fontSize: 28),
+                  style: const TextStyle(fontSize: 28),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -46,7 +46,7 @@ class _AssistantQuizPageState extends State<AssistantQuizPage> {
               padding: const EdgeInsets.all(8.0),
               child: TextButton(
                 onPressed: () {
-                  print('Choose 1');
+                  //print('Choose 1');
                   if (end) {
                     Navigator.pop(context);
                   } else {
@@ -56,55 +56,58 @@ class _AssistantQuizPageState extends State<AssistantQuizPage> {
                         end = true;
                       } else {
                         if (quizBrain.isCorrectAnswer(1)) {
-                          scoreKeeper.add(Icon(FontAwesomeIcons.check));
+                          scoreKeeper.add(const Icon(FontAwesomeIcons.check));
                         } else {
-                          scoreKeeper.add(Icon(FontAwesomeIcons.close));
+                          scoreKeeper.add(const Icon(FontAwesomeIcons.close));
                         }
                         quizBrain.nextQuestion();
-                        print(pageIndex);
+                        //print(pageIndex);
                         pageIndex++;
-                        print(pageIndex);
+                        //print(pageIndex);
                       }
                     });
                   }
                 },
                 child: Text(
                   quizBrain.getChoice(1),
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                  style: const TextStyle(color: Colors.white, fontSize: 16),
                 ),
                 style: TextButton.styleFrom(backgroundColor: Colors.lightBlue),
               ),
             ),
           ),
           end
-              ? Text('')
+              ? const Text('')
               : Expanded(
                   flex: 1,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(
                       onPressed: () {
-                        print('Choose 2');
+                        //print('Choose 2');
                         setState(() {
                           if (pageIndex >= 7) {
                             quizBrain.endGame();
                             end = true;
                           } else {
                             if (quizBrain.isCorrectAnswer(2)) {
-                              scoreKeeper.add(Icon(FontAwesomeIcons.check));
+                              scoreKeeper
+                                  .add(const Icon(FontAwesomeIcons.check));
                             } else {
-                              scoreKeeper.add(Icon(FontAwesomeIcons.close));
+                              scoreKeeper
+                                  .add(const Icon(FontAwesomeIcons.close));
                             }
-                            print(pageIndex);
+                            //print(pageIndex);
                             quizBrain.nextQuestion();
                             pageIndex++;
-                            print(pageIndex);
+                            //print(pageIndex);
                           }
                         });
                       },
                       child: Text(
                         quizBrain.getChoice(2),
-                        style: TextStyle(color: Colors.white, fontSize: 16),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
                       ),
                       style: TextButton.styleFrom(
                           backgroundColor: Colors.lightGreen),
@@ -112,34 +115,37 @@ class _AssistantQuizPageState extends State<AssistantQuizPage> {
                   ),
                 ),
           end
-              ? Text('')
+              ? const Text('')
               : Expanded(
                   flex: 1,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(
                       onPressed: () {
-                        print('Choose 3');
+                        //print('Choose 3');
                         setState(() {
                           if (pageIndex >= 7) {
                             quizBrain.endGame();
                             end = true;
                           } else {
                             if (quizBrain.isCorrectAnswer(3)) {
-                              scoreKeeper.add(Icon(FontAwesomeIcons.check));
+                              scoreKeeper
+                                  .add(const Icon(FontAwesomeIcons.check));
                             } else {
-                              scoreKeeper.add(Icon(FontAwesomeIcons.close));
+                              scoreKeeper
+                                  .add(const Icon(FontAwesomeIcons.close));
                             }
                             quizBrain.nextQuestion();
-                            print(pageIndex);
+                            //print(pageIndex);
                             pageIndex++;
-                            print(pageIndex);
+                            //print(pageIndex);
                           }
                         });
                       },
                       child: Text(
                         quizBrain.getChoice(3),
-                        style: TextStyle(color: Colors.white, fontSize: 16),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
                       ),
                       style: TextButton.styleFrom(
                           backgroundColor: Colors.blueGrey),
