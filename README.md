@@ -1,11 +1,11 @@
-![App Banner](https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/release/2.2.1/src/assets/images/cover.png)
+![App Banner](https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/images/cover.png)
 
 # Assistant Learn'UP
 
 Aplicativo criado para disciplina de Fundamentos de Programação Aplicada do Mestrado em Informática Aplicada da UFRPE
 
 
-![App gif](https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/release/2.2.1/src/assets/app.gif)
+![App gif](https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/app.gif)
 
 ### Aplicativo com foco na educação sobre assistentes virtuais
 
