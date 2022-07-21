@@ -1,37 +1,17 @@
-## Welcome to GitHub Pages
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/images/playstore.png" width="200" height="200">
 
-You can use the [editor on GitHub](https://github.com/Aan3dree/AssistantLearnUP/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Telas do Aplicativo
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/prints/home.png" width="180" height="320" > <img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/prints/learn.png" width="180" height="320" > <img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/prints/quiz1.png" width="180" height="320" > <img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/prints/quiz2.png" width="180" height="320" > <img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/prints/login.png" width="180" height="320" > <img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/prints/register.png" width="180" height="320" >
 
-### Markdown
+## Diagrama de Navegação
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Navigation.png" width="940" height="510" >
 
-```markdown
-Syntax highlighted code block
+## Widgets Trees
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Aan3dree/AssistantLearnUP/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Assistant%20Quiz%20Page.png" width="600" height="510" >
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/HomePage.png" width="700" height="520" >
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Login%20page.png" width="905" height="521" >
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Register%20page.png" width="676" height="521" >
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Sound%20Quiz%20Page.png" width="719" height="521" >
