@@ -7,11 +7,21 @@
 ## Diagrama de Navegação
 
 <img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Navigation.png" width="940" height="510" >
+![](https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Navigation.png)
 
 ## Widgets Trees
 
-<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Assistant%20Quiz%20Page.png" width="600" height="510" >
-<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/HomePage.png" width="700" height="520" >
-<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Login%20page.png" width="905" height="521" >
-<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Register%20page.png" width="676" height="521" >
-<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Sound%20Quiz%20Page.png" width="719" height="521" >
+Assistant Quiz Page
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Assistant%20Quiz%20Page.png" >
+
+Home
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/HomePage.png" >
+
+Login
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Login%20page.png" >
+
+Registration
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Register%20page.png" >
+
+Sound Quiz
+<img src="https://raw.githubusercontent.com/Aan3dree/AssistantLearnUP/main/src/assets/widgetsTree/Sound%20Quiz%20Page.png" >
