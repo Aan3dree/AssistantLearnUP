@@ -5,7 +5,7 @@
 Aplicativo criado para disciplina de Fundamentos de Programação Aplicada do Mestrado em Informática Aplicada da UFRPE
 
 ### Proposta de Projeto
-[Link](https://aan3dree.github.io/AssistantLearnUP/privacy.html)
+[Link](https://github.com/Aan3dree/AssistantLearnUP/blob/main/src/README.md)
 
 
 ### Política de Privacidade e termos de uso
